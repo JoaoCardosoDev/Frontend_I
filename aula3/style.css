@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    height: 100dvh;
+    width: 100dvh;
+}
+
+canvas{
+    display: block;
+    /* image-rendering: pixelated; */
+    /* scale: 2; */
+    background-color: red;
+}
+.play {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.reset {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}
