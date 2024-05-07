@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+    height: 100dvh;
+    width: 100dvh;
+}
+
+canvas{
+    display: block;
+    /* image-rendering: pixelated; */
+    /* scale: 2; */
+    background-color: yellow;
+}
