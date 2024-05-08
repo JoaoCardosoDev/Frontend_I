@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title> Aula 5 - Fetch API </title>
+</head>
+<body>
+    <div id="data-container"></div>
+
+    <button onclick="getData()">GET</button>
+    <button onclick="postData()">POST</button>
+
+    <form action="http://localhost:3000/data" method="post">
+        <label for="text-input" id="label-username">Text</label>
+        <div class="info" id="user-info">i</div>
+        <input type="text" name="text" id="input-username" placeholder="Input here" id="username-input">
+        <label for="password" id="label-password">Password</label>
+        <div class="info" id="pass-info">i</div>
+        <input type="password" name="password" id="input-password" placeholder="Password here">
+        <div id="void"></div>
+        <input type="submit" value="submit" id="submit">
+    </form>
+
+    <canvas width="240" height="100"></canvas>
+
+</body>
+</html>
