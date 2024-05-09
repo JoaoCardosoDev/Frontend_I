@@ -1,0 +1,66 @@
+.card1 {
+    display: grid;
+    grid-template-areas: 
+    "image title"
+    "image paragraph"
+    "image date";
+    width: 100dvh;
+    height: fit-content;
+    margin: auto;
+    padding: 20px;
+}
+img{
+    grid-area: image;
+    margin: auto;
+}
+h1 {
+    grid-area: title;
+    padding: 10px;
+    font-size: 64px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+p {
+    grid-area: paragraph;
+    padding: 10px;
+    margin-top: 0px;
+}
+
+p.date{
+    grid-area: date;
+    margin-bottom: 0px;
+    text-align: right;
+    font-style: italic;
+    color: gray;
+}
+
+@media screen and (max-width: 520px) {
+
+    .card1 {
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        height: fit-content;
+        margin: auto;
+        background-color: rgb(219, 217, 217);
+        padding: 20px;
+    }
+    
+    h1 {
+        padding: 10px;
+        font-size: 64px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    p {
+        padding: 10px;
+        margin-top: 0px;
+    }
+    
+    p.date{
+        margin-bottom: 0px;
+        text-align: right;
+        font-style: italic;
+        color: gray;
+    }
+}
