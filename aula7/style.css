@@ -1,0 +1,66 @@
+:root {
+    --font-family: system-ui, sans-serif;
+
+    --color-primary: #ffb739;
+    --color-text: #333;
+    --speed: 1s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    color: var(--color-text);
+    text-transform: uppercase;
+}
+
+body {
+    display: flex;
+    max-height: 100dvh;
+}
+
+h1{
+    font-size: 8vw;
+}
+
+img {
+    
+    animation: pulse var(--speed) infinite alternate;
+    margin: auto;
+    width: 192px;
+    height: 192px;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+section {
+    position: absolute;
+    display: flex;
+    inset: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+}
+
+#page2{
+    display: none;
+}
+
+#previous{
+    transform: rotate(180deg);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
