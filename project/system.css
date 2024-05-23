@@ -10,5 +10,9 @@
     /* PADDINGS & MARGINS */
 
     --h-padding: 20px;
-    --v-padding: 10px;
+    --v-padding: 20px;
+    --gap: 20px;
+
+    /* ANIMATION */
+    --speed: 0.5s;
 }

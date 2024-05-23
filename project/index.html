@@ -7,20 +7,20 @@
     <title>TODOs</title>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="script.js"></script>
+    <script src="webComponents.js"></script>
 </head>
+
 <body>
-    
     <main>
-    
-    <header></header>
-    <div class="lists-container">
-        <ul id="tasks"></ul>
-        <ul id="items"></ul>
-    </div>
-    <footer></footer>
-
+        <todo-header></todo-header>
+        <div id="lists-container">
+            <ul id="tasks">
+                <task-item></task-item>
+            </ul>
+            <ul id="items"></ul>
+        </div>
+        <footer></footer>
     </main>
-
 </body>
 
 </html>
