@@ -429,19 +429,82 @@ class CheckItem extends Item {
 customElements.define("check-item", CheckItem)
 
 
-const addTemplate = document.createElement('template');
-addTemplate.innerHTML = `
+const todoModalTemplate = document.createElement("template");
+todoModalTemplate.innerHTML =  `
 <style>
 
+#overlay{
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-text-dark);
+    z-index: 9998;
+    opacity: 80%;
+}
+
+#addCard {
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    height: 402px;
+    width: 590px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: var(--color-primary);
+    padding: 30px;
+    gap: 30px;
+}
+#buttonWrapper {
+    display: flex;
+    justify-content: end;
+    gap: 100px;
+    align-items: right;
+    bottom: 0;
+}
+#buttonWrapper svg{
+    width: 48px;
+    height: 48px;
+}
+label {
+    font-size: 64px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+}
+input {
+    height: 89px;
+    width: fill;
+    padding-left: 20px;
+    font-size: 24px; 
+}
 </style>
-
-
-
+    <div id="overlay">
+    </div>
+    <div id="addCard">
+        <label id="title">Add Task</label>
+        <input placeholder="Item name"></input>
+        <div id="buttonWrapper">
+            <svg width="100%" height="100%"  viewBox="0 0 24.342 24.342">
+                <path d="m12.171 8.4754-8.4754-8.4754-3.6954 3.6954 8.4754 8.4754-8.4754 8.4754 3.6954 3.6954 8.4754-8.4754 8.4754 8.4754 3.6954-3.6954-8.4754-8.4754 8.4754-8.4754-3.6954-3.6954z"/>
+            </svg>
+            <svg width="100%" height="100%"  viewBox="0 0 24.342 24.342" >
+                <path d="m20.497 2.6458 3.8447 3.865-15.105 15.185-9.2366-9.2856 3.8447-3.865 5.3919 5.4205z"/>
+            </svg>
+        </div>
+    </div>
 `
 
-class AddToList extends HTMLElement {
-    constructor() {
+class TodoModal extends HTMLElement {
+    
+    shadowRoot;
+
+    constructor () {
+        super();
+        this.shadowRoot = this.attachShadow({mode:'closed'});
+        this.shadowRoot.append(todoModalTemplate.content.cloneNode(true))
 
     }
 }
-customElements.define('add-to-list', AddToList)
+customElements.define("todo-modal", TodoModal);
