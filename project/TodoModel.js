@@ -5,6 +5,7 @@ export default class TodoModel {
 
         if(!localStorage.getItem("todos")){ 
             localStorage.setItem("todos", JSON.stringify(this.#tasks));
+            this.addTask("Add Task")
         } else {
             this.#tasks = JSON.parse(localStorage.getItem("todos"));
         }

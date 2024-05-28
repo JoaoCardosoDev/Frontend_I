@@ -539,7 +539,23 @@ class TodoModal extends HTMLElement {
                     value: input.value
             }
         }))
-        }
+        this.hide();
+    }
+    document.addEventListener("keydown", (ev) => {
+        if (ev.key === 'Enter') {
+            console.log("Enter clicked")
+          if (input.value.trim() === "") return;
+          this.dispatchEvent(new CustomEvent("confirm", {
+            detail: {
+              value: input.value
+            }
+          }));
+          this.hide();
+        } else {
+            if (ev.key === 'Escape') {
+                this.hide();
+            }
+        }});
     }
 
     show(state) {

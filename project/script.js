@@ -43,7 +43,14 @@ window.onload = async () => {
     const buildTaskList = (tasks) => {
         const tasksList = document.querySelector("#tasks");
         tasksList.innerHTML = "";
-        
+        if (tasks == "") {
+            const taskItem = new TaskItem();
+            
+            taskItem.title = "Add Tasks to the list"
+            const li = document.createElement('li');
+            li.append(taskItem)
+            tasksList.append(li);
+        }
         tasks.forEach((task, index) => {
 
             const li = document.createElement("li");
@@ -74,7 +81,17 @@ window.onload = async () => {
 
         const checkItemsList = document.querySelector("#items")
         checkItemsList.innerHTML = "";
+        if (items == "") {
+            const checkItem = new CheckItem();
+            
+            checkItem.title = "Add Items to the list"
+            checkItem.checked = "false";
+            const li = document.createElement('li');
+            li.append(checkItem)
+            checkItemsList.append(li);
+        }
         items.forEach((item, index) => {
+            console.log("here")
             const li = document.createElement("li");
             const checkItem = new CheckItem();
             checkItem.addEventListener("checked", (ev) => {
@@ -93,6 +110,10 @@ window.onload = async () => {
             checkItemsList.append(li);
         })
     }
+    const listContainerHeight = listsContainer.offsetHeight
+    document.querySelector("#tasks").style.height = `${listContainerHeight}px`;
+    document.querySelector("#items").style.height = `${listContainerHeight}px`;
+    
 
     buildTaskList(model.getTasks());
 }

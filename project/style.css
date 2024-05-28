@@ -24,6 +24,7 @@ header {
 }
 
 main {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -47,14 +48,22 @@ ul {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    list-style: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
+ul::-webkit-scrollbar { 
+    display: none;
+}
+
+
 #tasks {
-    background-color: purple;
+    background-color: var(--color-text-light);
 }
 
 #items {
-    background-color: blue;
+    background-color: var(--color-text-light);
 }
 footer {
     flex: 1;
